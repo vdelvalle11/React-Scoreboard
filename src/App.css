@@ -122,7 +122,7 @@ svg {
   }
 
   .player-name:hover .remove-player {
-    visibility: visible;
+    visibility: visible !important;
   }
 
   .player-name,
