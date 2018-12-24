@@ -1,5 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+const players = [
+  {
+    name: "Victor",
+    score: 50
+  },
+  {
+    name: "Keannee",
+    score: 30
+  },
+  {
+    name: "Angel",
+    score: 14
+  },
+  {
+    name: "Michele",
+    score: 83
+  },
+]
 
 const Header = (props) => {
     return (
@@ -14,7 +32,7 @@ const Player = (props) => {
     return (
       <div className = "player">
         <span classsName = "player-name">
-        {props.playerName}
+        {props.name}
         </span>
 
         <Counter score = {props.score}/>
@@ -32,15 +50,22 @@ const Counter = (props) => {
     )
 }
 
+const AppContent = (props) => {
+  return (
+    <div className="scoreboard">
+      <Header title = "Scoreboard" totalPlayers = {1}/>
+
+      {props.initialplayers.map( player =>
+        <Player name={player.name} score={player.score}/>
+      )}
+    </div>
+  )
+}
+
 const App = () => {
     return (
-      <div className="scoreboard">
-        <Header title = "Scoreboard" totalPlayers = {1}/>
-
-
-        <Player playerName = "Victor" score="5"/>
-      </div>
-    );
+      <AppContent initialplayers = {players}/>
+    )
 }
 
 export default App;
