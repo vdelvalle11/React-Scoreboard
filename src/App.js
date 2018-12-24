@@ -3,19 +3,23 @@ import './App.css';
 const players = [
   {
     name: "Victor",
-    score: 50
+    score: 50,
+    id: 1
   },
   {
     name: "Keannee",
-    score: 30
+    score: 30,
+    id: 2
   },
   {
     name: "Angel",
-    score: 14
+    score: 14,
+    id: 3
   },
   {
     name: "Michele",
-    score: 83
+    score: 83,
+    id: 4
   },
 ]
 
@@ -53,10 +57,14 @@ const Counter = (props) => {
 const AppContent = (props) => {
   return (
     <div className="scoreboard">
-      <Header title = "Scoreboard" totalPlayers = {1}/>
+      <Header title = "Scoreboard" totalPlayers = {players.length}/>
 
       {props.initialplayers.map( player =>
-        <Player name={player.name} score={player.score}/>
+        <Player
+          name={player.name}
+          score={player.score}
+          key={player.id.toString()}
+        />
       )}
     </div>
   )

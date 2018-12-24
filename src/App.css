@@ -114,6 +114,7 @@ svg {
   letter-spacing: 2px;
   justify-content: space-between;
   align-items: center;
+  padding-left:10px;
 }
 
   .player:last-of-type {
